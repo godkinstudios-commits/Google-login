@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting to Google Login</title>
+    <script>
+        // Replace these values with your own Google OAuth 2.0 credentials
+        const clientId = "YOUR_CLIENT_ID.apps.googleusercontent.com";
+        const redirectUri = "https://your-redirect-uri.com/callback";
+        const scope = "email profile"; // scopes you need
+        const responseType = "token"; // for implicit flow
+
+        // Construct the Google OAuth URL
+        const oauthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=${responseType}&scope=${encodeURIComponent(scope)}`;
+
+        // Redirect automatically
+        window.location.href = oauthUrl;
+    </script>
+</head>
+<body>
+    <p>Redirecting to Google login...</p>
+</body>
+</html>
